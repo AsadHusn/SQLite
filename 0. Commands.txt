@@ -1,0 +1,115 @@
+.databases
+
+; not used with . commands
+.open	(create database)
+.dbinfo
+.table | .tables | .ta | .schema
+.schema tname (describe)
+
+
+PRAGMA INTEGRITY_CHECK;
+
+check version function
+select sqlite_version();
+
+PRAGMA table_info(Cars)
+
+SELECT name FROM sqlite_master WHERE type='table'
+
+CREATE TABLE IF NOT EXISTS new_table( 
+   column_definition,
+   ...
+);
+
+DROP TABLE IF EXISTS new_table;
+
+CREATE TABLE new_table (column_definitions);
+
+DROP TABLE name;
+
+
+   rename a table
+ALTER TABLE existing_table RENAME TO new_table;
+   rename a column
+ALTER TABLE tname RENAME COLUMN current_name TO new_name;
+
+   add a new column
+ALTER TABLE table_name ADD COLUMN column_definition;
+   remove a column
+ALTER TABLE <tname> DROP COLUMN <column-name>;
+   OR
+BEGIN TRANSACTION;
+CREATE TEMPORARY TABLE t1_backup(a,b);
+INSERT INTO t1_backup SELECT a,b FROM t1;
+DROP TABLE t1;
+CREATE TABLE t1(a,b);
+INSERT INTO t1 SELECT a,b FROM t1_backup;
+DROP TABLE t1_backup;
+COMMIT;
+
+
+INSERT INTO tname VALUES(v1,v2...vn);
+INSERT INTO tname(ATTRIBUTES) VALUES(v1,v2...vn);
+
+SELECT columns FROM tname
+LIMIT value OFFSET value;
+
+UPDATE tname SET c1=v1, c2=v2
+WHERE condition;
+
+DELETE FROM tname;
+
+SELECT * FROM tname WHERE column LIKE 'value';
+two wildcards with LIKE
+% multiple characters
+_ single character
+
+SELECT * FROM tname WHERE column GLOB 'value';
+two wildcards with GLOB
+* multiple characters
+? single character
+
+SELECT * FROM tname WHERE column IN (values);
+
+Logical Operators
+BETWEEN AND OR NOT
+
+ORDER BY column ASC|DESC
+
+GROUP BY column
+HAVING condition;
+HAVING clause places conditions on groups created by the GROUP BY clause.
+
+CREATE INDEX indexname ON column;
+DROP INDEX;
+
+select typeof(value)
+
+Constraints
+DISTINCT
+AUTOINCREMENT
+PRIMARY KEY
+UNIQUE
+NOT NULL
+
+Functions
+MIN(column)
+MAX(column)
+COUNT(column)
+AVG(column)
+SUM(column)
+
+
+--Altering an existing column to add a default constraint:
+ALTER TABLE {TABLE NAME}
+ADD CONSTRAINT {CONSTRAINT NAME}
+DEFAULT {DEFAULT VALUE} FOR {EXISTING COLUMN NAME}
+
+--Adding a new column, with default value, to an existing table:
+ALTER TABLE {TABLE NAME}
+ADD {COLUMN NAME} {DATA TYPE} {NULL | NOT NULL}
+CONSTRAINT {CONSTRAINT NAME} DEFAULT {DEFAULT VALUE}
+
+--Dropping a contraint:
+ALTER TABLE {TABLE NAME}
+DROP CONSTRAINT {CONSTRAINT NAME}

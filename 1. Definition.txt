@@ -1,0 +1,57 @@
+SQL | DDL, DQL, DML, DCL and TCL Commands
+---------------------------------
+
+DDL - Data Definition Language
+It provides the storage structure and methods to access data from the database system.
+
+CREATE
+ALTER
+DROP
+
+Use to create and drop databases, aliases, locations, indexes, tables and sequences,
+Alter these objects and impose or drop certain constraints on tables.
+
+Apart from the CREATE, DROP and ALTER commands, DDL includes other commands:
+COMMENT ON is used to add a single-line, multiline or inline comment about an object in the catalog tables at the current location.
+LABEL ON is used to add or change descriptive text labels describing tables, views, aliases or columns to the catalog tables.
+RENAME is used to modify the name of a database table.
+TRUNCATE is used to quickly remove all records from a table, while preserving its full structure so it can be reused later.
+
+---------------------------------
+
+DML - Data Manipulation Language
+It enables users to manipulate (add/modify/delete) data.
+INSERT
+UPDATE
+DELETE
+LOCK: Table control concurrency.
+CALL: Call a PL/SQL or JAVA subprogram.
+
+---------------------------------
+
+DQL - Data Query Language
+It enables users to retrieve required data from the database.
+SELECT
+
+---------------------------------
+
+DCL – Data Control Language
+It deals with the rights, permissions, and other controls of the database system. 
+
+GRANT: This command gives users access privileges to the database.
+REVOKE: This command withdraws the user’s access privileges given by using the GRANT command.
+
+---------------------------------
+
+TCL – Transaction Control Language
+Transactions group a set of tasks into a single execution unit.
+Each transaction begins with a specific task and ends when all the tasks in the group successfully complete.
+If any of the tasks fail, the transaction fails. Therefore, a transaction has only two results: success or failure.
+
+COMMIT: Commits a Transaction.
+ROLLBACK: Rollbacks a transaction in case of any error occurs.
+SAVEPOINT:Sets a savepoint within a transaction.
+SET TRANSACTION: Specify characteristics for the transaction.
+
+A database transaction, by definition, must be atomic, consistent, isolated and durable. 
+These are popularly known as ACID properties.

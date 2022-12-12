@@ -1,0 +1,13 @@
+PRAGMA foreign_keys=off;
+
+BEGIN TRANSACTION;
+
+
+CONSTRAINT product_name_unique UNIQUE (product_name)
+
+
+COMMIT;
+
+PRAGMA foreign_keys=on;
+
+PRAGMA INTEGRITY_CHECK;

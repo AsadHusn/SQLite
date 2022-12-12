@@ -1,0 +1,57 @@
+NULL
+INTEGER
+REAL
+TEXT
+BLOB
+----------
+
+Integers
+The number of seconds since 1970-01-01 00:00:00 UTC
+
+INT
+INTEGER
+TINYINT
+SMALLINT
+MEDIUMINT
+BIGINT
+UNSIGNED BIG INT
+INT2
+INT8
+
+-----------------------------
+TEXT
+A date in a format like "YYYY-MM-DD HH:MM:SS.SSS"
+
+CHARACTER(20)
+VARCHAR(255)
+VARYING CHARACTER(255)
+NCHAR(55)
+NATIVE CHARACTER(70)
+NVARCHAR(100)
+TEXT
+CLOB
+
+-----------------------------
+REAL
+The number of days since noon in Greenwich on November 24, 4714 B.C.
+
+REAL
+DOUBLE
+DOUBLE PRECISION
+FLOAT
+
+-----------------------------
+NUMERIC
+A date in a format like "YYYY-MM-DD HH:MM:SS.SSS"
+
+NUMERIC
+DECIMAL(10,5)
+BOOLEAN
+DATE
+DATETIME
+
+-----------------------------
+NONE
+
+BLOB
+no datatype specified

@@ -1,0 +1,26 @@
+make a CHECK Constraint
+
+
+
+CREATE TABLE HOSTEL ( 
+   H_NO VARCHAR2(5) NOT NULL,
+   H_NAME VARCHAR2(15),
+   CAPACITY INTEGER,
+   CHECK ( H_NO LIKE 'H%'), 
+   CHECK ( CAPACITY <= 150) 
+); 
+
+
+--Altering an existing column to add a default constraint:
+ALTER TABLE {TABLE NAME}
+ADD CONSTRAINT {CONSTRAINT NAME}
+DEFAULT {DEFAULT VALUE} FOR {EXISTING COLUMN NAME}
+
+--Adding a new column, with default value, to an existing table:
+ALTER TABLE {TABLE NAME}
+ADD {COLUMN NAME} {DATA TYPE} {NULL | NOT NULL}
+CONSTRAINT {CONSTRAINT NAME} DEFAULT {DEFAULT VALUE}
+
+--Dropping a contraint:
+ALTER TABLE {TABLE NAME}
+DROP CONSTRAINT {CONSTRAINT NAME}

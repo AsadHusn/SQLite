@@ -1,0 +1,19 @@
+check
+PRAGMA foreign_keys;
+
+PRAGMA foreign_keys = ON;
+PRAGMA foreign_keys = OFF;
+
+
+FOREIGN KEY (foreign_key_columns)
+   REFERENCES parent_table(parent_key_columns)
+      ON UPDATE action 
+      ON DELETE action;
+
+SQLite supports the following actions:
+
+SET NULL
+SET DEFAULT
+RESTRICT
+NO ACTION
+CASCADE
